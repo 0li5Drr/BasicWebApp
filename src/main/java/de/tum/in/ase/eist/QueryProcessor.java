@@ -26,7 +26,7 @@ public class QueryProcessor {
             String subString = query.split(":")[1];
             String[] nums = subString.split(",");
             int max = Integer.parseInt(nums[0]);
-            for (int i = 0; i < nums.length;i++){
+            for (int i = 0; i < nums.length; i++) {
                 nums[i] = nums[i].trim();
             }
             try {
@@ -40,7 +40,16 @@ public class QueryProcessor {
             } catch (NumberFormatException e) {
                 return "";
             }
+        }
+        else if (query.contains("multiply")) {
+            String[] nums = query.substring(8).split("plus");
+            try {
+                int num = Integer.parseInt(nums[1].substring(1).trim()) * Integer.parseInt(nums[0].trim());
+                return Integer.toString(num);
+            } catch (NumberFormatException e) {
 
+            }
+            return "";
         } else { // TODO extend the programm here
             return "";
         }
