@@ -41,15 +41,14 @@ public class QueryProcessor {
                 return "";
             }
         }
-        else if (query.contains("multiply")) {
-            String[] nums = query.substring(8).split("plus");
+        else if (query.contains("multiplied by")) {
+            String[] nums = query.substring(8).split("multiplied by");
             try {
                 int num = Integer.parseInt(nums[1].substring(1).trim()) * Integer.parseInt(nums[0].trim());
                 return Integer.toString(num);
             } catch (NumberFormatException e) {
-
+                return  "oops";
             }
-            return "";
         } else { // TODO extend the programm here
             return "";
         }
