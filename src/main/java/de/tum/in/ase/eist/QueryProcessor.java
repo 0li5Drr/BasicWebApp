@@ -33,7 +33,7 @@ public class QueryProcessor {
                 for (String num :
                         nums) {
                     if (Integer.parseInt(num.trim()) > max) {
-                        max = Integer.parseInt(num);
+                        max = Integer.parseInt(num.trim());
                     }
                 }
                 return Integer.toString(max);
