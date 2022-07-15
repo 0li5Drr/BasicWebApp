@@ -16,7 +16,7 @@ public class QueryProcessor {
         } else if (query.contains("plus")) {
             String[] nums = query.substring(8).split("plus");
             try {
-                int num = Integer.parseInt(nums[1]) + Integer.parseInt(nums[0]);
+                int num = Integer.parseInt(nums[1].trim()) + Integer.parseInt(nums[0].trim());
                 return Integer.toString(num);
             } catch (NumberFormatException e) {
 
@@ -29,7 +29,7 @@ public class QueryProcessor {
             try {
                 for (String num :
                         nums) {
-                    if (Integer.parseInt(num) > max) {
+                    if (Integer.parseInt(num.trim()) > max) {
                         max = Integer.parseInt(num);
                     }
                 }
