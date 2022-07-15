@@ -23,6 +23,23 @@ public class QueryProcessor {
                 e.printStackTrace();
             }
             return "";
+        } else if (query.contains("largest")) {
+            String subString = query.split(":")[1];
+            String[] nums = subString.split(",");
+            int max = Integer.parseInt(nums[0]);
+            try{
+                for (String num :
+                        nums) {
+                    if (Integer.parseInt(num) > max) {
+                        max = Integer.parseInt(num);
+                    }
+                }
+                return Integer.toString(max);
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+                return "";
+            }
+
         } else { // TODO extend the programm here
             return "";
         }
